@@ -6,7 +6,7 @@
 
 ## Quick view
 
-![index page](https://raw.githubusercontent.com/newman0934/restaurant/master/public/img/index.png)
+![index page](https://raw.githubusercontent.com/newman0934/rubbish_generator/master/public/img/index.png)
 
 ## Environment set up
 - Node.js
