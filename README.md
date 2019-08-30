@@ -13,6 +13,7 @@
 - Express.js
 - express-handlebars
 - nodemon
+- body-parser
 
 ### Installation
 - Download restaurant ZIP
