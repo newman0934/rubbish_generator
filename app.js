@@ -25,6 +25,8 @@ app.use(bodyParser.urlencoded({extended:true}))
 ///require rubbish_generator.js
 const generatedRubbish = require("./rubbish_generator.js")
 
+app.use(express.static("public"))
+
 
 //產生畫面
 app.get("/",(req,res)=>{
