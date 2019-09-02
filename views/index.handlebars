@@ -2,48 +2,21 @@
 <div class="container mx-auto mt-4">
     <form method="POST" action="/">
         <div class="row">
+
+            {{#each jobs}}
             <div class="col-4">
                 <div class="card mb-3 item">
-                    <label for='engineer'>
-                        <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5668/angry-developer.jpg"
-                            class="card-img-top img" alt="engineer" style="height: 13rem;">
+                    <label for="{{this.name}}">
+                        <img src="{{this.img}}" class="card-img-top img" alt="{{this.name}}" style="height: 13rem;">
                     </label>
                     <div class="card-body custom-control custom-radio text-center p-3">
-                        <input type="radio" class="custom-control-input" name="jobs" value="engineer" id="engineer"
-                            {{#ifEquals options.jobs 'engineer'}} checked {{/ifEquals}}>
-                        <label class="custom-control-label" for="engineer">engineer</label>
+                        <input type="radio" class="custom-control-input" name="jobs" value="{{this.name}}" id="{{this.name}}" {{#ifEquals ../options.jobs
+                            this.name}} checked {{/ifEquals}}>
+                        <label class="custom-control-label" for="{{this.name}}">{{this.name}}</label>
                     </div>
                 </div>
             </div>
-
-            <div class="col-4">
-                <div class="card mb-3 item">
-                    <label for="designer">
-                        <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5667/angry-designer.jpg"
-                            class="card-img-top img" alt="designer" style="height: 13rem;">
-                    </label>
-                    <div class="card-body custom-control custom-radio text-center p-3">
-                        <input type="radio" class="custom-control-input" name="jobs" value="designer" id="designer"
-                            {{#ifEquals options.jobs 'designer'}} checked {{/ifEquals}}>
-                        <label class="custom-control-label" for="designer">designer</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-4">
-                <div class="card mb-3 item">
-                    <label for="entrepreneur">
-                        <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/5669/angry-founder.jpg"
-                            class="card-img-top img" alt="entrepreneur" style="height: 13rem;">
-                    </label>
-                    <div class="card-body custom-control custom-radio text-center p-3">
-                        <input type="radio" class="custom-control-input" name="jobs" value="entrepreneur"
-                            id="entrepreneur" {{#ifEquals options.jobs 'entrepreneur'}} checked {{/ifEquals}}>
-                        <label class="custom-control-label" for="entrepreneur">entrepreneur</label>
-                    </div>
-                </div>
-            </div>
-
+            {{/each}} 
             {{#if rubbish}}
             <div class="alert alert-info col-sm-12" role="alert">
                 <span class="mr-2">{{rubbish}}</span>
